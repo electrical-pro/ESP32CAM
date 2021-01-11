@@ -18,7 +18,7 @@ Uncomment these lines to set static IP:
   WiFi.config(ip, gateway, subnet, dnsAdrr);
 ```
   
-Camera available via IP ex. http://192.168.X.X/esp32_cam_main
+Camera available via http://192.168.X.X/esp32_cam_main
 
 Additional features that I added:
 1. Wi-Fi signal level go to: http://192.168.X.X/signal
