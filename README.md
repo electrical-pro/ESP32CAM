@@ -31,5 +31,7 @@ Stream URL: http://192.168.X.X:81/esp32_cam_stream
 Get photo URL: http://192.168.X.X/esp32_cam_capture
 
 P.S. I modified URLs, so just knowing the IP of the camera will not give you a video.
+
 Before it was http://192.168.X.X
+
 Now it is http://192.168.X.X/esp32_cam_main
