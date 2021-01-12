@@ -1,7 +1,7 @@
 #include "esp_camera.h"
 #include <WiFi.h>
 
-//
+// MOD
 // WARNING!!! Make sure that you have either selected ESP32 Wrover Module,
 //            or another board which has PSRAM enabled
 //
@@ -16,8 +16,9 @@
 #include "camera_pins.h"
 
 const char* ssid = "NetworkName";
-const char* password = "Password";
+const char* password = "MyPassword";
 
+uint8_t dis_count = 0;
 
 void startCameraServer();
 
@@ -79,22 +80,32 @@ void setup() {
   s->set_framesize(s, FRAMESIZE_XGA);
 
 
-  WiFi.setHostname("ESP32_CAM");
-  delay(500);
-
-// ==== Static IP (optional) ====//
-//  IPAddress ip(192, 168, 4, 222);
+//umcomment for static IP
+//  IPAddress ip(192, 168, 4, 210);
 //  IPAddress gateway(192, 168, 4, 1);
 //  IPAddress subnet(255, 255, 255, 0);
 //  IPAddress dnsAdrr(8, 8, 8, 8);
 //  Serial.println(F("Wifi config..."));
 //  WiFi.config(ip, gateway, subnet, dnsAdrr);
+
+//Comment out for static IP
+  WiFi.config(INADDR_NONE, INADDR_NONE, INADDR_NONE); // helps set host name
+  
+  WiFi.setHostname("ESP32C_STREET");
   
   WiFi.begin(ssid, password);
 
   while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
+    delay(1000);
     Serial.print(".");
+    dis_count++;
+    if(dis_count>60)
+    {
+      Serial.println();
+      Serial.println("Restarting ESP");
+      delay(1000);
+      ESP.restart();
+    }
   }
   
   Serial.println("");
@@ -108,6 +119,22 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  delay(10000);
+  //Reboot ESP32 if Wi-fi connection is lost (fixes some issues)
+  delay(1000);
+  if(WiFi.status() != WL_CONNECTED)
+  {
+    dis_count++;
+    Serial.println("Not Connected to Wi-Fi | " + String(dis_count));
+  }
+  else
+  {
+    dis_count=0;
+  }
+
+  if(dis_count>60)
+  {
+    Serial.println("Restarting ESP");
+    delay(1000);
+    ESP.restart();
+  }
 }
