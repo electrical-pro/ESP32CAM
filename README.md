@@ -1,4 +1,4 @@
-This is a modified version of CameraWebServer code from Arduino IDE example.
+# This is a modified version of CameraWebServer code from Arduino IDE example.
 To get original code, in your Arduino IDE go to: File > Examples > ESP32 > Camera > CameraWebServer
 
 Watch how it works https://youtu.be/MKiITEsOwRA
