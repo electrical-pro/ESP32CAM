@@ -38,12 +38,6 @@ Now it is http://192.168.X.X/esp32_cam_main
 
 # Components
 
-Amazon:
-
-ESP32 Camera + UART converter + wires: https://amzn.to/3s4ZjXQ
-
-AliExpress:
-
 USB to UART converter https://s.click.aliexpress.com/e/_dW0jGff
 
 ESP32 Camera: https://s.click.aliexpress.com/e/_d8XnZxj
@@ -51,3 +45,7 @@ ESP32 Camera: https://s.click.aliexpress.com/e/_d8XnZxj
 DC-DC Converter: https://s.click.aliexpress.com/e/_dWvPhXW
 
 5V LED Modules here: https://s.click.aliexpress.com/e/_d7fCXNX
+
+
+Almost all needed on amazon:
+ESP32 Camera + UART converter + wires: https://amzn.to/3s4ZjXQ
