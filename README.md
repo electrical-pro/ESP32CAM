@@ -47,5 +47,5 @@ DC-DC Converter: https://s.click.aliexpress.com/e/_dWvPhXW
 5V LED Modules here: https://s.click.aliexpress.com/e/_d7fCXNX
 
 
-Almost all needed on amazon:
+Almost all needed on Amazon:
 ESP32 Camera + UART converter + wires: https://amzn.to/3s4ZjXQ
